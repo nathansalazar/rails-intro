@@ -12,7 +12,7 @@ class OrderMailerTest < ActionMailer::TestCase
   test "shipped" do
     mail = OrderMailer.shipped(orders(:one))
     assert_equal "Pragmatic Store Order Shipped", mail.subject
-    assert_equal ["test@example.org"], mail.to
+    assert_equal ["test@example.com"], mail.to
     assert_equal ["pragmatic@bookstore.com"], mail.from
     assert_match /<td[^>]*>1<\/td>\s*<td>Programming Ruby 1.9<\/td>/,
     mail.body.encoded
